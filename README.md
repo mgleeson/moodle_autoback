@@ -2,6 +2,8 @@
 
 ![moodle_autoback logo](logo_sml.png)
 
+**Update:** Autoback now supports database backup for both MySQL/MariaDB and PostgreSQL.
+
 `moodle_autoback` backs up a Moodle site's database, webroot files, and
 `moodledata` directory from one command. It reads the required database and data
 directory settings from Moodle's `config.php`.
@@ -170,8 +172,6 @@ The site name used in filenames comes from Moodle's course shortname where
 `moodlefilesbackup.sh` calls `moodle_autoback --files-only --data-only`.
 
 ## Caveats and limitations
-
-This tool supports Moodle sites using MySQL/MariaDB or PostgreSQL databases.
 
 I made this tool for my own use (I often say that laziness is the mother of invention, and indeed in this case it is true!) and it's something I use often, so when things go wrong I often find them - however with that said, this is no commercial product by any means and I have not the time to vet all corners of it (especially since updating it so extensively recently, there are bound to be some new sharp edges not yet discovered!). As such, I can in no way guarantee it will be right for anyone else, but all are welcome to use it and my hope is that it helps someone, somewhere, in whatever small way it possibly could. 
 
