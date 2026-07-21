@@ -97,10 +97,13 @@ Required commands for a full backup:
 
 * `bash`
 * `find`
-* `mysql`
-* `mysqldump`
 * `tar`
 * `gzip`
+
+Database backups also require the client tools for the Moodle database type:
+
+* MySQL/MariaDB (`mysqli`, `mariadb`, or `mysql`): `mysql` and `mysqldump`
+* PostgreSQL (`pgsql`): `psql` and `pg_dump`
 
 If `--email` is used, either `mutt` or `sendmail` is required. The `sendmail`
 path also requires `base64` for attachments.
@@ -120,6 +123,8 @@ config values such as paths built from `__DIR__` or environment variables.
 
 If PHP CLI is not available, the script falls back to a Bash parser for simple
 single-quoted or double-quoted `$CFG->key = "value";` assignments.
+
+For database connections, `$CFG->dboptions['dbport']` is used when set.
 
 ## Output Files
 
@@ -166,7 +171,7 @@ The site name used in filenames comes from Moodle's course shortname where
 
 ## Caveats and limitations
 
-Note: currently this tool is limited to compatibility with MySQL/MariaDB - I may expand it later for compatibiltiy with Postgres also however. 
+This tool supports Moodle sites using MySQL/MariaDB or PostgreSQL databases.
 
 I made this tool for my own use (I often say that laziness is the mother of invention, and indeed in this case it is true!) and it's something I use often, so when things go wrong I often find them - however with that said, this is no commercial product by any means and I have not the time to vet all corners of it (especially since updating it so extensively recently, there are bound to be some new sharp edges not yet discovered!). As such, I can in no way guarantee it will be right for anyone else, but all are welcome to use it and my hope is that it helps someone, somewhere, in whatever small way it possibly could. 
 
